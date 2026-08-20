@@ -145,8 +145,9 @@ body {
    Term card (button)
 --------------------------------------------- */
 .attributes {
+    height: 100px;
     flex: 0 0 auto;
-    width: 210px;
+    width: 220px;
     background-color: var(--yellow);
     color: var(--ink);
     border: none;
