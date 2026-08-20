@@ -1,4 +1,4 @@
-# JavaScript Flashcards
+# JavaScript Flashcards  || Adebayo Oluwapelumi Daniel.
 
 A simple interactive JavaScript study project built as a flashcard-style learning page. The app helps users review key JavaScript concepts such as functions, arguments, arrays, methods, booleans, and parameters in a visual and easy-to-use format.
 
