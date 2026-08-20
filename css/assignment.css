@@ -1,0 +1,304 @@
+/* ---------------------------------------------
+   Tokens
+--------------------------------------------- */
+:root {
+    --bg: #17181a;
+    --bg-raised: #1f2022;
+    --yellow: #f7df1e;
+    --ink: #101010;
+    --paper: #f5f1e3;
+    --paper-dim: #c9c5b8;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(var(--bg-raised) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-raised) 1px, transparent 1px);
+    background-size: 40px 40px;
+    font-family: var(--sans);
+    color: var(--paper);
+}
+
+/* ---------------------------------------------
+   Header
+--------------------------------------------- */
+.headbox {
+    min-height: 220px;
+    width: 100%;
+    padding: 40px 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.boxx1 {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.headtxt1 {
+    width: fit-content;
+    background-color: var(--yellow);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    padding: 14px 28px;
+    gap: 14px;
+    border-radius: 14px;
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.headtxt1 h1 {
+    font-family: var(--mono);
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+}
+
+.headtxt1 h2 {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.75;
+}
+
+.bracket {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 1.6rem;
+    opacity: 0.35;
+}
+
+.line {
+    height: 32px;
+    width: 2px;
+    background-color: var(--ink);
+    opacity: 0.35;
+}
+
+.headtxt2 {
+    width: fit-content;
+    max-width: 49ch;
+    padding: 6px 4px;
+}
+
+.headtxt2 h3 {
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--paper-dim);
+    line-height: 1.5;
+}
+
+.boxx2 {
+    font-family: var(--mono);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--yellow);
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------
+   Card grid
+--------------------------------------------- */
+.container {
+    width: min(1100px, 92%);
+    margin: 20px auto 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.box1 {
+    flex: 1 1 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 12px 0;
+    gap: 14px;
+}
+
+.flexx {
+    flex-direction: row;
+}
+
+/* ---------------------------------------------
+   Term card (button)
+--------------------------------------------- */
+.attributes {
+    flex: 0 0 auto;
+    width: 210px;
+    background-color: var(--yellow);
+    color: var(--ink);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 22px;
+    border-radius: 16px;
+    box-shadow: 4px 4px 0 var(--ink);
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.attributes:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.attributes:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 var(--ink);
+}
+
+.attributes:focus-visible {
+    outline: 3px solid var(--paper);
+    outline-offset: 3px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 0;
+}
+
+.glyph {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 1.05rem;
+    background-color: var(--ink);
+    color: var(--yellow);
+    padding: 4px 8px;
+    border-radius: 6px;
+    min-width: 2.4em;
+    text-align: center;
+}
+
+.top h1 {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* Active (open) state of the button that owns an open card */
+.attributes.active {
+    background-color: var(--ink);
+    color: var(--yellow);
+    box-shadow: 4px 4px 0 var(--yellow);
+}
+
+.attributes.active .glyph {
+    background-color: var(--yellow);
+    color: var(--ink);
+}
+
+/* ---------------------------------------------
+   Definition card + slide animation
+   (toggle the "show" class from JS via classList)
+--------------------------------------------- */
+.defination {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-raised);
+    border: 1.5px solid var(--yellow);
+    border-radius: 16px;
+    padding: 18px 22px;
+    cursor: default;
+
+    transform-origin: left center;
+    transform: scaleX(0) translateX(-24px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        transform 0.45s var(--ease),
+        opacity 0.3s ease,
+        visibility 0s linear 0.45s;
+}
+
+.defination.reverse {
+    transform-origin: right center;
+    transform: scaleX(0) translateX(24px);
+}
+
+.defination.show {
+    transform: scaleX(1) translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+        transform 0.45s var(--ease),
+        opacity 0.35s ease 0.05s,
+        visibility 0s linear 0s;
+}
+
+.defination p {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--paper);
+}
+
+.defination p::after {
+    content: '_';
+    color: var(--yellow);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .defination,
+    .attributes {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ---------------------------------------------
+   Small screens
+--------------------------------------------- */
+@media (max-width: 640px) {
+    .flex,
+    .flexx {
+        flex-direction: column;
+    }
+
+    .attributes {
+        width: 100%;
+    }
+
+    .defination {
+        transform: scaleY(0);
+        transform-origin: top center;
+    }
+
+    .defination.show {
+        transform: scaleY(1);
+    }
+}

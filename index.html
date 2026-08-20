@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/assignment.css">
+    <script src="javascript/javascript.js" defer></script>
+    <title>JavaScript Flashcards</title>
+</head>
+
+<body>
+    <div class="headbox">
+        <div class="boxx1">
+            <div class="headtxt1">
+                <span class="bracket">{</span>
+                <h1>Flash Cards</h1>
+                <span class="bracket">}</span>
+                <div class="line"></div>
+                <h2>JavaScript Attributes</h2>
+            </div>
+
+            <div class="headtxt2">
+                <h3>Tap a term to slide open its definition. Tap again to close it.</h3>
+            </div>
+        </div>
+
+        <div class="boxx2" aria-hidden="true">&lt;/&gt;</div>
+    </div>
+
+    <div class="container">
+        <div class="box1">
+
+            <div class="flex">
+                <button class="attributes" id="functionBtn" data-target="functionDef" aria-expanded="false">
+                    <div class="top">
+                        <span class="glyph">ƒ</span>
+                        <h1>Functions</h1>
+                    </div>
+                </button>
+                <div class="defination" id="functionDef">
+                    <p>A reusable block of code that runs when it's called.</p>
+                </div>
+            </div>
+
+            <div class="flex">
+                <button class="attributes" id="argumentBtn" data-target="agumentDef" aria-expanded="false">
+                    <div class="top">
+                        <span class="glyph">( )</span>
+                        <h1>Arguments</h1>
+                    </div>
+                </button>
+                <div class="defination" id="agumentDef">
+                    <p>The actual values passed into a function when it's called.</p>
+                </div>
+            </div>
+
+            <div class="flex">
+                <button class="attributes" id="arrayBtn" data-target="arrayDef" aria-expanded="false">
+                    <div class="top">
+                        <span class="glyph">[ ]</span>
+                        <h1>Arrays</h1>
+                    </div>
+                </button>
+                <div class="defination" id="arrayDef">
+                    <p>An ordered list that stores multiple values in one variable.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box1">
+
+            <div class="flex flexx">
+                <div class="defination reverse" id="methodsDef">
+                    <p>A function that belongs to an object, called with dot notation.</p>
+                </div>
+                <button class="attributes" id="methodsBtn" data-target="methodsDef" aria-expanded="false">
+                    <div class="top">
+                        <span class="glyph">.run()</span>
+                        <h1>Methods</h1>
+                    </div>
+                </button>
+            </div>
+
+            <div class="flex flexx">
+                <div class="defination reverse" id="booleanDef">
+                    <p>A data type with only two possible values: true or false.</p>
+                </div>
+                <button class="attributes" id="booleanBtn" data-target="booleanDef" aria-expanded="false">
+                    <div class="top">
+                        <span class="glyph">?:</span>
+                        <h1>Boolean</h1>
+                    </div>
+                </button>
+            </div>
+
+            <div class="flex flexx">
+                <div class="defination reverse" id="parameterDef">
+                    <p>Named placeholders listed in a function's definition.</p>
+                </div>
+                <button class="attributes" id="parameterBtn" data-target="parameterDef" aria-expanded="false">
+                    <div class="top">
+                        <span class="glyph">x,y</span>
+                        <h1>Parameters</h1>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
