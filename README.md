@@ -48,7 +48,7 @@ If you would like to get in touch, you can reach me at:
 
 - Email: adebayopelumidaniel@gmail.com
 - Phone: +234 90 7256 8060
-- GitHub: github.com/Ade-bayyo
+- GitHub: https://github.com/Ade-bayyo
 
 
 ## License
