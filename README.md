@@ -34,7 +34,6 @@ The project was built using the following tools and technologies:
 - JavaScript – for interactivity and flashcard behavior
 - Google Fonts – typography used in the design
 - GitHub – for repository hosting and version control
-- Browser Developer Tools – for testing, debugging, and previewing the page
 
 ## How to Run the Project
 
